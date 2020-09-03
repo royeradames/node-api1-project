@@ -69,7 +69,7 @@ function Dashboard() {
     })
   }
   useEffect(() => {
-    axios.get(`${process.env.APIURL || 'http://localhost:8080'}/api/users`)
+    axios.get(`https://royer-adames-node-api2-project.herokuapp.com/api/users`)
       .then(resp => {
         console.log('testing on get all users')
         setAllUsersData(resp.data)
@@ -108,7 +108,7 @@ function Dashboard() {
   const [deleteUserByIdData, setDeleteUserByIdData] = useState()
   const onSubmitForDeleteById = (data) => {
     setReRun(!reRun)
-    axios.delete(`${process.env.APIURL || 'http://localhost:8080'}/api/users/${data.id}`)
+    axios.delete(`https://royer-adames-node-api2-project.herokuapp.com/api/users/${data.id}`)
       .then(resp => {
         debugger
         setDeleteUserByIdData(resp.data)
@@ -124,7 +124,7 @@ function Dashboard() {
   const onSubmitForCreateUser = (createNewUser) => {
     setReRun(!reRun)
     debugger
-    axios.post(`${process.env.APIURL || 'http://localhost:8080'}/api/users`, createNewUser)
+    axios.post(`https://royer-adames-node-api2-project.herokuapp.com/api/users`, createNewUser)
       .then(resp => {
         debugger
         setCreateNewUserData(resp.data)
