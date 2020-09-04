@@ -20,7 +20,7 @@ export default function EditForm() {
 
     //helperfunctions
     const onSubmitEditForm = (data) => {
-        axios.put(`https://royer-adames-node-api2-project.herokuapp.com/api/users/${id}`, data)
+        axios.put(`https://royer-adames-node-api1-project.herokuapp.com/api/users/${id}`, data)
             .then(res => {
                 push('/')
             })
